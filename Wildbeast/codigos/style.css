@@ -16,7 +16,9 @@ a {
 }
 
 img {
+    display: block;
     max-width: 100%;
+    border-radius: 5px;
 }
 
 .estrutura {
@@ -51,20 +53,68 @@ img {
     display: block;
     padding: 10px;
     color: white;
+    font-size: 1.125em; /*mais ou menos um tamanho de 18px*/
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+.header li + li { /*ele irá adicionar os elementos apenas para os "li" que vinherem depois do primeiro*/
+    margin-left: 30px;
+}
+
+.header nav a:hover {
+    background: rgba(0,0,0,.5);
 }
 
 .sidenav {
     grid-area: sidenav;
+    background: #fafbfc;
+    padding: 30px;
+}
+
+.sidenav li a {
+    display: block;
+    min-width: 60px;
+    max-width: 100px;
+    margin: 0 auto 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    transition: .3s ease-in-out;
+}
+
+.sidenav li a:hover {
+    background: #B07DFB;
 }
 
 .content {
     grid-area: content;
+    display: grid;
+}
+
+.col-wide {
+    grid-column: 1 / -1;
 }
 
 .anuncios {
     grid-area: anuncios;
+    background: #fafbfc;
+    padding: 30px;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    grid-gap: 30px; /*um empaço que so é criado entre os elementos*/
 }
 
 .footer {
     grid-area: footer;
+    padding: 30px;
+    background: linear-gradient(135deg, #8844EE, #B07DFB);
+}
+
+.footer p {
+    text-align: center;
+    color: white;
 }
